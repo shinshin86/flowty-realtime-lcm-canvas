@@ -24,7 +24,7 @@ with gr.Blocks() as demo:
                 t = gr.Text(label="Prompt", value="Scary warewolf, 8K, realistic, colorful, long sharp teeth, splash art", interactive=True)
                 se = gr.Number(label="seed", value=1337, interactive=True)
         with gr.Row(equal_height=True):
-            i = gr.Image(source="canvas", tool="color-sketch", shape=(canvas_size, canvas_size), width=canvas_size, height=canvas_size, type="pil")
+            i = gr.Image(source="webcam", tool="color-sketch", shape=(canvas_size, canvas_size), width=canvas_size, height=canvas_size, type="pil", streaming=True)
             o = gr.Image(width=canvas_size, height=canvas_size)
 
             def process_image(p, im, steps, cfg, image_strength, seed):
